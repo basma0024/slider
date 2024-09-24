@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html, body {
+    overflow: hidden;
+    height: 100%; 
+}
+body{
+
+    background-image: url(../imgs/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.carousel{
+
+    height: 100vh; 
+    overflow: hidden; 
+    position: relative;
+    top: 100px;
+}
+.img-box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1600px;
+    height: 1600px;
+    bottom: -78%;
+
+    height: 100%; 
+
+}
+.img-box .img-list{
+    height: inherit;
+    transform: rotate(90deg);
+}
+.img-list .img-slider{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    transition: .5s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.img-slider .img-item {
+    position: absolute;
+    left: 0;
+    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform-origin: 800px;
+}
+
+.img-item img{
+    width: 100%; 
+    height: auto; 
+    max-width: 400px; 
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 10px rgba(0,0,0,.1));
+    border-radius: 30px;
+    overflow: hidden;
+    
+}
+
+.navigate{
+    position: absolute;
+    left: 50% ;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+.navigate span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 44px;
+    color: black;
+
+}
+.bg-box .bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.bg-box .bg.active{
+    opacity: 1;
+
+}
+
